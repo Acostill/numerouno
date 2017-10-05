@@ -91,7 +91,11 @@ var rl = readline.createInterface({
 rl.on('line', function(input) {
     var inputArr = input.split(' ')
     if (inputArr[0] === 'ADD') {
-        //add task with input as description and completed = false
+        //add task with input as description and completed = false'
+        tasks.push(createTask(inputArr.slice(1, inputArr.length).join(' '), false))
+        forEachElem(tasks, function(task, index) {
+            console.log(index + '. ' + task.title + ' Completed: ' + task.completed)
+        })
     } else if (inputArr[0] === 'exit') {
         rl.close()
     } else {
@@ -104,7 +108,7 @@ function createTask (title, completed){
       title: title,
       completed: completed
     }
-    return task
+    tasks.push(task)
 }
 
 function forEachElem(arr, callback) {
@@ -114,11 +118,9 @@ function forEachElem(arr, callback) {
 }
 
 var tasks = []
-tasks.push(createTask("walk dog", false))
-tasks.push(createTask("wash cat", false))
+// tasks.push(createTask("walk dog", false))
+// tasks.push(createTask("wash cat", false))
 
-forEachElem(tasks, function(task, index) {
-    console.log(index + '. ' + task.title + ' Completed: ' + task.completed)
-})
-
-//this is a test
+// forEachElem(tasks, function(task, index) {
+//     console.log(index + '. ' + task.title + ' Completed: ' + task.completed)
+// })
