@@ -120,3 +120,5 @@ tasks.push(createTask("wash cat", false))
 forEachElem(tasks, function(task, index) {
     console.log(index + '. ' + task.title + ' Completed: ' + task.completed)
 })
+
+//this is a test
