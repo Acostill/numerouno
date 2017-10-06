@@ -65,6 +65,8 @@ function showTasks(arr, callback, condition) {
             if (arr[i].completed === true) {
                 callback(arr[i], i)
             }
+        } else {
+            showValidCommands()
         }
     }
 }
@@ -73,5 +75,6 @@ function showValidCommands () {
     console.log('Valid commands: \n' +
                 'ADD <name of task> \n' +
                 'toggle <task ID> \n' +
-                'show <"all", "active", or "completed">')
+                'show <"all", "active", or "completed"> \n' + 
+                'exit')
 }
