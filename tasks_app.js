@@ -65,8 +65,6 @@ function showTasks(arr, callback, condition) {
             if (arr[i].completed === true) {
                 callback(arr[i], i)
             }
-        } else {
-            showValidCommands()
         }
     }
 }
