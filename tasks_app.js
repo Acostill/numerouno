@@ -12,15 +12,9 @@ rl.on('line', function(input) {
     if (inputArr[0] === 'ADD') {
         //add task with input as description and completed = false'
         createTask(inputArr.slice(1, inputArr.length).join(' '))
-        showTasks(tasks, function(task, index) {
-            console.log(index + '. ' + task.title + ' Completed: ' + task.completed)
-        })
     } else if (inputArr[0] === 'toggle') {
         //switch complete status for task
         toggle(inputArr[1])
-        showTasks(tasks, function(task, index) {
-            console.log(index + '. ' + task.title + ' Completed: ' + task.completed)
-        })
     } else if (inputArr[0] === 'show') {
         //display tasks (options: all, active, completed)
         showTasks(tasks, function(task, index) {
@@ -65,6 +59,8 @@ function showTasks(arr, callback, condition) {
             if (arr[i].completed === true) {
                 callback(arr[i], i)
             }
+        } else {
+            showValidCommands()
         }
     }
 }
