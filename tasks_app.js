@@ -48,6 +48,7 @@ function toggle(index) {
 }
 
 function showTasks(arr, callback, condition) {
+    var result = ''
     for (var i = 0; i < arr.length; i++){
         if (condition === 'all') {
             callback(arr[i], i)

@@ -159,6 +159,132 @@
 // }
 
 //Dates and time
-var now = new Date(1993, 4, 7, 12);
 
-console.log(now.toString());
+// var birthDate = new Date(1993, 11, 9)
+// birthDate.setDate(birthDate.getDate() + 180)
+// console.log(birthDate.toString())
+
+// var date = new Date(2016, 2, 14, 3, 12)
+
+// console.log(date.toString())
+
+// var date = new Date(2012, 0, 3);
+// var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+// function getWeekDay(date) {
+//     return days[date.getDay()]
+// }
+// console.log(getWeekDay(date));
+
+// var today = new Date(2015, 0 , 1)
+
+// function getDateBefore (date, days) {
+//     var beforeDate = new Date(date);
+//     beforeDate.setDate(today.getDate() - days)
+//     return beforeDate.toString()
+// }
+
+// console.log(getDateBefore(today, 15))
+
+// function getLastDayOfMonth (year, month) {
+//     var date = new Date(year, month)
+//     var lastDay = new Date(date)
+//     lastDay.setMonth(date.getMonth() + 1)
+//     lastDay.setDate(lastDay.getDate() - 1)
+//     return lastDay.toString()
+// }
+
+// console.log(getLastDayOfMonth(2012, 1))
+
+// var months = ['January', 'February', 'March', 'April', 
+//               'May', 'June', 'July', 'August', 'September', 
+//               'October', 'November' , 'December'];
+
+// var date = new Date(2017, 5)
+
+// function nameOfMonth (dateObj) {
+//     var index = dateObj.getMonth().toString()
+//     return months[index]
+// }
+
+// console.log(nameOfMonth(date))
+
+// function getSecondsToday() {
+//     var today = new Date()
+//     today.setHours(0, 0, 0)
+//     var midnight = today.getTime()
+//     var currentHour = new Date().getTime()
+//     return ((currentHour - midnight)/1000)
+// }
+
+// console.log(getSecondsToday())
+
+// function getSecondsToTomorrow() {
+//     var today = new Date()
+//     var tomorrow = new Date(today)
+//     tomorrow.setDate(today.getDate() + 1)
+//     tomorrow.setHours(0, 0, 0)
+//     return ((tomorrow.getTime() - today.getTime()) / 1000)
+// }
+
+// console.log(getSecondsToTomorrow())
+
+//another way of creating objects
+
+// function Dog (name, breed, weight) {
+//     // this = {}
+//     this.name   = name;
+//     this.breed  = breed;
+//     this.weight = weight;
+//     //return this
+// }
+
+// var pluto = new Dog("Charlie", "Mixed", 38)
+// console.log(pluto.name)
+
+/**
+ * functions themselves have properties
+ * for function dog () {} will return a value
+ * All functios also have a property called prototype
+ * Prototype property is an empty object
+ * Functions also have a property called constructor
+ */
+
+//  function Rabbit (type) {
+//      this.type = type;
+//  }
+
+//  var killerRabbit = new Rabbit("killer");
+//  var kr = {
+//      type: 'killer'
+//  }
+
+//  console.log(kr)
+//  console.log(killerRabbit)
+
+function Vector (x, y) {
+    this.x = x
+    this.y = y
+}
+
+Vector.prototype.plus = function (vec) {
+    this.x += vec.x
+    this.y += vec.y
+    return this
+}
+
+Vector.prototype.minus = function (vec) {
+    this.x -= vec.x
+    this.y -= vec.y
+    return this
+}
+
+Vector.prototype.getLength = function (vec) {
+    return Math.sqrt(Math.pow(this.x - 0, 2) + Math.pow(this.y - 0, 2))
+}
+
+var v1 = new Vector(1, 2)
+var v2 = new Vector(2, 3)
+var v3 = new Vector(3, 4)
+//v1.minus(v2)
+console.log(v3.getLength())
