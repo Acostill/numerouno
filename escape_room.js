@@ -342,9 +342,10 @@ rl.on('line', function (input) {
 
 
 // Create an array of RoomObject objects
-var roomObjects =  [new RoomObject('Chest', 'a chest that holds items (can be broken)', ['gold', 'sword', 'shoe', 'key'], ['hammer'], 'open'),
+var roomObjects =  [new RoomObject('Chest', 'a chest that holds items (can be broken)', ['gold', 'sword', 'shoe', 'key'], ['hammer'], 'break'),
                     new RoomObject('Door', 'a door that leads places (can be opened)', [], ['key'], 'open'),
-                    new RoomObject('Blanket', 'a warm and fuzzy cloth (can be lifted', ['chestKey'], [], 'lift')]
+                    new RoomObject('Blanket', 'a warm and fuzzy cloth (can be lifted)', ['hammer'], [], 'lift'),
+                    new RoomObject('Note: Chests can be broken, doors can be opened, blankets can be lifted.')]
 
 // Create an array of Room objects
 var rooms = [new Room(roomObjects)]

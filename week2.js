@@ -602,7 +602,7 @@
     for(var key in object) {
     if(key === 'ingredients'){
     console.log(key + ':')
-    for(var i= 0; i<object[key].length; i++) {
+    for(var i= 0; i < object[key].length; i++) {
     console.log(object[key][i])
     }
     } else {
