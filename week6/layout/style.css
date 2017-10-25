@@ -1,0 +1,39 @@
+#navigation {
+
+}
+
+#navigation ul {
+    padding-left: .5em;
+    margin-bottom: .4em;
+    padding: 0;
+}
+        
+#navigation li {
+    padding: .4em;
+    display: inline;
+    list-style: none;
+    background-color: #b5b2b5;
+}
+        
+#case {
+    padding-left: .5em;
+    width: 500px;
+    overflow: overlay;  
+    background-color: #e7e7e7;
+}
+        
+#footer {
+    padding-left: .5em;
+    width: 500px;
+    overflow: overlay;
+    background-color: #b5b2b5;
+}
+        
+#footer ul {
+    padding-left: .5em;
+}
+        
+#footer  li {
+    display: inline;
+}
+       
