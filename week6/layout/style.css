@@ -3,7 +3,7 @@
 }
 
 #navigation ul {
-    padding-left: .5em;
+    /* padding-left: 0; */
     margin-bottom: .4em;
     padding: 0;
 }
