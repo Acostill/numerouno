@@ -416,17 +416,46 @@
 //     }
 // }
 
-function deleteNth(arr,x){
-    var result = []
-    for (var i = 0; i < arr.length; i++) {
-        var condition = result.filter(function (el) {
-            return el === arr[i]
-        }).length
-        if (condition < x) {
-            result.push(arr[i])
-        }
-    }
-    return result
-  }
+// function deleteNth(arr,x){
+//     var result = []
+//     for (var i = 0; i < arr.length; i++) {
+//         var condition = result.filter(function (el) {
+//             return el === arr[i]
+//         }).length
+//         if (condition < x) {
+//             result.push(arr[i])
+//         }
+//     }
+//     return result
+//   }
   
-  console.log(deleteNth([0,0,0,2,0,0], 2))
+//   console.log(deleteNth([0,0,0,2,0,0], 2))
+
+function sort (arr) {
+    return arr.sort()
+}
+    
+function middleElement (arr) {
+    newArr = [];
+    if (arr.length % 2 === 0) {
+        newArr.push(arr[arr.length/2 - 1]);
+        newArr.push(arr[arr.length/2]);
+        return newArr
+    } else {
+        newArr.push(arr[Math.floor(arr.length/2)])
+        return newArr;
+    }
+}
+    
+function median (arr) {
+    arr = sort(arr);
+    arr = middleElement(arr);
+    if (arr.length === 2) {
+        return (arr[0] + arr[1]) / 2;
+    } else {
+        return arr[0];
+    }
+}
+var array = [9, 2, 5, 3, 7, 6, 8, 1, 4];
+//1, 2, 3, 4, 5, 6, 7, 8, 9
+console.log(median(array));

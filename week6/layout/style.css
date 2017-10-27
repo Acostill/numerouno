@@ -11,7 +11,7 @@
 #navigation li {
     padding: .4em;
     display: inline;
-    list-style: none;
+    /* list-style: none; */
     background-color: #b5b2b5;
 }
         
