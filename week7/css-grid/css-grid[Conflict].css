@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(76,76,157);
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    grid-template-areas:
+    "logo . . . home about"
+    "img img text tex text ."
+    "img img btn . . ."
+    ". . . . . ."
+}
+
+.logo {
+    grid-area:
+}
