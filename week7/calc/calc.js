@@ -5,7 +5,10 @@ var operators = ['+','-','*','/'];
 var operations = ['add','sub','mul','div']
 
 function eval(mathExp) {
-    if 
+    mathExp
+    if ('') {
+
+    }
 }
 /**
  * @function calculate
@@ -13,6 +16,7 @@ function eval(mathExp) {
  * @return {number} {the result of the calculation or NaN if it couldn't be done}
  */
 function calculate(mathExp){
+    outputDiv.innerText = '';
     try {
        return eval(mathExp)
     } catch (e) {
