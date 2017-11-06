@@ -16,6 +16,7 @@
 //  finished item (ie every item with a line-through) should be 
 //  removed from the page. HINT: You can use Element.style.textDecoration
 //   to see if an item is "completed".
+/*
 document.addEventListener("DOMContentLoaded", function (event) {
     function newList() {
         var input = document.getElementById("#text")
@@ -54,3 +55,56 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     })
 });
+*/
+
+var ul = document.querySelector('ul');
+var savedList = window.localStorage.getItem('ul')
+var li = document.querySelector('li');
+var submit = document.getElementById('submit');
+var remove = document.getElementById('remove')
+var input;
+submit.addEventListener('click', 
+    function(event) {
+        event.preventDefault();
+        var node = document.createElement('li');
+
+        input = document.getElementById('text').value;
+        node.innerText = input;
+        ul.appendChild(node);
+
+        //clears the text field
+        document.getElementById('text').value = '';
+        console.log(input);
+    }
+)
+
+ul.addEventListener('click', 
+    function(event) {
+        li = document.querySelector('li');
+        toggleLine(event.target);
+    }
+)
+
+remove.addEventListener('click',
+    function (event) {
+        var children = ul.querySelectorAll('li');
+        console.log(children);
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            console.log(child)
+            if (child.style.textDecoration === 'line-through') {
+                ul.removeChild(child);
+            }
+        }
+    }
+)
+function toggleLine (item) {
+    if (item.style.textDecoration === 'line-through') {
+        item.style.textDecoration = 'none';
+        item.style.color = 'black';
+        
+    } else {
+        item.style.textDecoration = 'line-through';
+        item.style.color = 'red';
+    }
+}

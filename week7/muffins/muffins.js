@@ -33,16 +33,18 @@ document.addEventListener('DOMContentLoaded', function(event) {
     console.log('count is: ' + count);
     console.log(eat);
     console.log(bake);
-    if (count) {
+    console.log(window.localStorage.getItem('countKey'))
+    if (window.localStorage.getItem('countKey') !== null) {
         countEl.innerText = count;
     } else {
-        count = countEl.innerText;
+        count = Number(countEl.innerText);
     }
     eat.addEventListener('click', function (event) {
         if (count > 0) {
             count--
             countEl.innerText = count;
             window.localStorage.setItem('countKey', countEl.innerText);
+            console.log('count is : ' + count);
         }
     });
     
@@ -50,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
          count += 5;
          countEl.innerText = count
          window.localStorage.setItem('countKey', countEl.innerText);
+         console.log('count is: ' + count);
     });
 });
 
