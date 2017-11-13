@@ -26,33 +26,38 @@ function calculate(mathExp){
     }
 }
 
+var showResult = false;
 
 document.addEventListener('DOMContentLoaded', function() {
-  outputDiv = document.getElementById('output');
-
-  document.addEventListener('click', function(event) {
-    var elementId = event.target.id;
-    if (numbers.includes(elementId)) {
-        outputDiv.innerText += elementId;
-    } else if (operations.includes(elementId)) {
-        switch (elementId) {
-            case 'add':
-                outputDiv.innerText += '+';
-                break;
-            case 'sub':
-                outputDiv.innerText += '-';
-                break;
-            case 'mul':
-                outputDiv.innerText += '*';
-                break;
-            case 'div':
-                outputDiv.innerText += '/';
-                break;
+    outputDiv = document.getElementById('output');
+    document.addEventListener('click', function(event) {
+        var elementId = event.target.id;
+        if (showResult) {
+            outputDiv.innerText = '';
+            showResult = false;
+        }
+        if (numbers.includes(elementId)) {
+            outputDiv.innerText += elementId;
+        } else if (operations.includes(elementId)) {
+            switch (elementId) {
+                case 'add':
+                    outputDiv.innerText += '+';
+                    break;
+                case 'sub':
+                    outputDiv.innerText += '-';
+                    break;
+                case 'mul':
+                    outputDiv.innerText += '*';
+                    break;
+                case 'div':
+                    outputDiv.innerText += '/';
+                    break;
         }
     } else if (elementId === 'clr') {
         outputDiv.innerText = '';
     } else if (elementId === 'eq') {
         outputDiv.innerText = calculate(outputDiv.innerText);
+        showResult = true;
     }
     //outputDiv.innerText += elementId;
     // logging the element id for debug purposes

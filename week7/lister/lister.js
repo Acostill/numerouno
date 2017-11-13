@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 */
 
 var ul = document.querySelector('ul');
-var savedList = window.localStorage.getItem('ul')
+var getList = window.localStorage.getItem('list')
 var li = document.querySelector('li');
 var submit = document.getElementById('submit');
 var remove = document.getElementById('remove')
@@ -75,12 +75,13 @@ submit.addEventListener('click',
         //clears the text field
         document.getElementById('text').value = '';
         console.log(input);
+        window.localStorage.setItem('list', )
     }
 )
 
 ul.addEventListener('click', 
     function(event) {
-        li = document.querySelector('li');
+        // li = document.querySelector('li');
         toggleLine(event.target);
     }
 )
