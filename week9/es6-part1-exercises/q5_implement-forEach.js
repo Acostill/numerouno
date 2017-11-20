@@ -1,4 +1,4 @@
-let forEach = (array, callback) => {
+const forEach = (array, callback) => {
     array.forEach(el => {callback(el)});
 }
 

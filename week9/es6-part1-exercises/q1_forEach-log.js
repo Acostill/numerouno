@@ -1,4 +1,4 @@
-let logElem = array => {
+const logElem = array => {
     array.forEach(el => {console.log(el)}
 )};
 
